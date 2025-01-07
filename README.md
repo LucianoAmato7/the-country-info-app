@@ -1,6 +1,11 @@
 # Country Info App
 
-This project is built with Next.js, Tailwind CSS and React Icons for the frontend, and Node.js with Express and Axios for the backend.
+This repository contains the test assessment project, which involves building two small applications to provide information about countries. The project includes:
+
+- **Backend (BE)**: Built with Node.js using Express.
+- **Frontend (FE)**: Built with Next.js.
+
+The goal of this project is to demonstrate proficiency in both backend and frontend development, integrating various technologies to create a cohesive application that provides detailed information about countries.
 
 ## Installation
 
@@ -20,8 +25,8 @@ The backend will be available at [http://localhost:5000/api](http://localhost:50
 
 #### Endpoints:
 
-- **GET /api/countries**: Retrieves a list of countries.
-- **GET /api/country/:CountryCode**: Retrieves detailed information about the selected country.
+- **GET /api/countries** | Retrieves a list of countries.
+- **GET /api/country/:CountryCode** | Retrieves detailed information about the selected country.
 
 ### Frontend
 
@@ -55,3 +60,7 @@ Jest and Supertest are used to test the API.
 - **Backend**:
   - [Express](https://expressjs.com/)
   - [Axios](https://axios-http.com/)
+
+### Note
+
+The `.env` files are included in this repository because the project requirements specified their inclusion. No sensitive information is exposed through these files.
