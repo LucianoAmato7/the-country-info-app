@@ -13,3 +13,4 @@ export const borderCountries = process.env.BORDER_COUNTRIES;
 export const countriesPopulation = process.env.COUNTRIES_POPULATION;
 export const countriesFlag = process.env.COUNTRIES_FLAG;
 export const api_Key = process.env.API_KEY;
+export const api_url = process.env.API_URL;
