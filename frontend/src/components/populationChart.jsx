@@ -1,43 +1,56 @@
-// "use client"
+"use client";
+import { Line } from 'react-chartjs-2';
+import { Chart, CategoryScale, LinearScale, PointElement, LineElement, Title, Tooltip, Legend } from 'chart.js';
 
-// import { Line, LineChart, XAxis, YAxis, CartesianGrid, Tooltip, ResponsiveContainer } from "recharts"
-// import { Card } from "@/components/ui/card"
-// import { ChartContainer, ChartTooltip, ChartTooltipContent } from "@/components/ui/chart"
+Chart.register(CategoryScale, LinearScale, PointElement, LineElement, Title, Tooltip, Legend);
 
+export default function PopulationChart({ data }) {
+    const years = data.map(d => d.year);
+    const population = data.map(d => d.value);
 
-// export default function PopulationChart({ data }) {
-//   return (
-//     <Card className="w-full aspect-[16/9]">
-//       <ChartContainer
-//         config={{
-//           population: {
-//             label: "Population",
-//             color: "hsl(var(--chart-1))",
-//           },
-//         }}
-//       >
-//         <ResponsiveContainer width="100%" height="100%">
-//           <LineChart data={data}>
-//             <CartesianGrid strokeDasharray="3 3" />
-//             <XAxis 
-//               dataKey="year"
-//               tickFormatter={(value) => value.toString()}
-//             />
-//             <YAxis 
-//               tickFormatter={(value) => new Intl.NumberFormat('en-US', { notation: 'compact', compactDisplay: 'short' }).format(value)}
-//             />
-//             <ChartTooltip content={<ChartTooltipContent />} />
-//             <Line 
-//               type="monotone" 
-//               dataKey="value"
-//               name="population"
-//               stroke="var(--color-population)"
-//               strokeWidth={2}
-//             />
-//           </LineChart>
-//         </ResponsiveContainer>
-//       </ChartContainer>
-//     </Card>
-//   )
-// }
+    const chartData = {
+        labels: years,
+        datasets: [
+            {
+                label: 'Population',
+                data: population,
+                borderColor: 'rgba(75, 192, 192, 1)',
+                backgroundColor: 'rgba(75, 192, 192, 0.2)',
+                fill: true,
+            },
+        ],
+    };
 
+    const options = {
+        responsive: true,
+        plugins: {
+            legend: {
+                position: 'top',
+            },
+            title: {
+                display: true,
+                text: 'Population Over Time',
+            },
+        },
+        scales: {
+            x: {
+                title: {
+                    display: true,
+                    text: 'Year',
+                },
+            },
+            y: {
+                title: {
+                    display: true,
+                    text: 'Population',
+                },
+            },
+        },
+    };
+
+    return (
+        <div>
+            <Line data={chartData} options={options} />
+        </div>
+    );
+}
