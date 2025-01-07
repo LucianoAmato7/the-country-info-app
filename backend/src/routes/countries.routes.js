@@ -6,7 +6,7 @@ import {
 
 const router = Router();
 
-router.get("/", getAvailableCountriesController);
-router.get("/:countryCode", getCountryInfoController);
+router.get("/countries", getAvailableCountriesController);
+router.get("/country/:countryCode", getCountryInfoController);
 
 export default router;

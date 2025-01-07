@@ -8,7 +8,8 @@ const __dirname = dirname(__filename);
 
 dotenv.config({ path: path.resolve(__dirname, "../../.env") });
 
-export const countriesList = process.env.COUNTRIESLIST;
-export const borderCountries = process.env.BORDERCOUNTRIES;
-export const countriesPopulation = process.env.COUNTRIESPOPULATION;
-export const countriesFlag = process.env.COUNTRIESFLAG;
+export const countriesList = process.env.COUNTRIES_LIST;
+export const borderCountries = process.env.BORDER_COUNTRIES;
+export const countriesPopulation = process.env.COUNTRIES_POPULATION;
+export const countriesFlag = process.env.COUNTRIES_FLAG;
+export const api_Key = process.env.API_KEY;
